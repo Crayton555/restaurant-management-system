@@ -1,0 +1,29 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Employee Details</h1>
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Payment</th>
+                <th>Start Shift</th>
+                <th>End Shift</th>
+                <th>Manager</th>
+                <th>Chef</th>
+                <th>Waiter</th>
+            </tr>
+            <tr th:each="employee : ${employeeDetails}">
+                <td th:text="${employee.id_employee}"></td>
+                <td th:text="${employee.name}"></td>
+                <td th:text="${employee.contact_info}"></td>
+                <td th:text="${employee.payment}"></td>
+                <td th:text="${employee.start_shift}"></td>
+                <td th:text="${employee.end_shift}"></td>
+                <td th:text="${employee.manager}"></td>
+                <td th:text="${employee.chef}"></td>
+                <td th:text="${employee.waiter}"></td>
+            </tr>
+        </table>
+    </div>
+</div>

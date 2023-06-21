@@ -1,0 +1,38 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Cooked Item Details</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Amount</th>
+                <th>Order ID</th>
+                <th>Item Quantity</th>
+                <th>Order Date</th>
+                <th>Menu Item ID</th>
+                <th>Menu Item Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Recipe</th>
+                <th>Chef ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="cookedItem : ${cookedItemDetails}">
+                <td th:text="${cookedItem.id_cooked_items}"></td>
+                <td th:text="${cookedItem.amount}"></td>
+                <td th:text="${cookedItem.id_order}"></td>
+                <td th:text="${cookedItem.item_quantity}"></td>
+                <td th:text="${cookedItem.order_date}"></td>
+                <td th:text="${cookedItem.id_menu_items}"></td>
+                <td th:text="${cookedItem.menu_item_name}"></td>
+                <td th:text="${cookedItem.price}"></td>
+                <td th:text="${cookedItem.description}"></td>
+                <td th:text="${cookedItem.recipe}"></td>
+                <td th:text="${cookedItem.id_chef}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Ingredients Supplier</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Ingredient ID</th>
+                <th>Ingredient Name</th>
+                <th>Supplies</th>
+                <th>Supplier ID</th>
+                <th>Supplier Name</th>
+                <th>Contact Info</th>
+                <th>Amount</th>
+                <th>Order Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ingredient : ${viewIngredientsSupplier}">
+                <td th:text="${ingredient.id_ingredients}"></td>
+                <td th:text="${ingredient.ingredients_name}"></td>
+                <td th:text="${ingredient.supplies}"></td>
+                <td th:text="${ingredient.id_supplier}"></td>
+                <td th:text="${ingredient.supplier_name}"></td>
+                <td th:text="${ingredient.contact_info}"></td>
+                <td th:text="${ingredient.amount}"></td>
+                <td th:text="${ingredient.order_date}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

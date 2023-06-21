@@ -1,0 +1,40 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Order Details</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Price</th>
+                <th>Order Type</th>
+                <th>Item Quantity</th>
+                <th>Order Date</th>
+                <th>Pickup Time</th>
+                <th>Payment Method</th>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Client Email</th>
+                <th>Client Telephone Number</th>
+                <th>Waiter ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${orderDetails}">
+                <td th:text="${order.id_order}"></td>
+                <td th:text="${order.price}"></td>
+                <td th:text="${order.order_type}"></td>
+                <td th:text="${order.item_quantity}"></td>
+                <td th:text="${order.order_date}"></td>
+                <td th:text="${order.pickup_time}"></td>
+                <td th:text="${order.payment_method}"></td>
+                <td th:text="${order.client_id}"></td>
+                <td th:text="${order.client_name}"></td>
+                <td th:text="${order.client_email}"></td>
+                <td th:text="${order.client_telephone_number}"></td>
+                <td th:text="${order.waiter_id}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

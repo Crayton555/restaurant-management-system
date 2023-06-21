@@ -1,0 +1,28 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Menu Item Details</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Menu Item ID</th>
+                <th>Menu Item Name</th>
+                <th>Menu Item Recipe</th>
+                <th>Ingredient ID</th>
+                <th>Ingredient Name</th>
+                <th>Ingredient Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="menuItem : ${menuItemDetails}">
+                <td th:text="${menuItem.id_menu_items}"></td>
+                <td th:text="${menuItem.menu_item_name}"></td>
+                <td th:text="${menuItem.menu_item_recipe}"></td>
+                <td th:text="${menuItem.id_ingredients}"></td>
+                <td th:text="${menuItem.ingredient_name}"></td>
+                <td th:text="${menuItem.ingredient_amount}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

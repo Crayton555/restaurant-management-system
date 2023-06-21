@@ -1,0 +1,28 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Ingredients Price History</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Ingredient ID</th>
+                <th>Ingredient Name</th>
+                <th>Price History ID</th>
+                <th>Price</th>
+                <th>Price From</th>
+                <th>Price To</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ingredient : ${viewIngredientsPriceHistory}">
+                <td th:text="${ingredient.id_ingredients}"></td>
+                <td th:text="${ingredient.ingredient_name}"></td>
+                <td th:text="${ingredient.id_ingredients_price_history}"></td>
+                <td th:text="${ingredient.price}"></td>
+                <td th:text="${ingredient.price_from}"></td>
+                <td th:text="${ingredient.price_to}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
