@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Reviews</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Review ID</th>
+                <th>Grade</th>
+                <th>Text</th>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Waiter ID</th>
+                <th>Order ID</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="review : ${viewReview}">
+                <td th:text="${review.id_review}"></td>
+                <td th:text="${review.grade}"></td>
+                <td th:text="${review.text}"></td>
+                <td th:text="${review.id_client}"></td>
+                <td th:text="${review.client_name}"></td>
+                <td th:text="${review.id_waiter}"></td>
+                <td th:text="${review.id_order}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

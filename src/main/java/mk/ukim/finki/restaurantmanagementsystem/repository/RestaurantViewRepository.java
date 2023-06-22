@@ -45,4 +45,34 @@ public class RestaurantViewRepository {
         String sql = "SELECT * FROM view_ingredients_supplier limit 1000";
         return jdbcTemplate.queryForList(sql);
     }
+
+    public List<Map<String, Object>> getViewLoyaltyProgramPoints() {
+        String sql = "SELECT * FROM view_loyalty_program_points limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
+
+    public List<Map<String, Object>> getViewMenu() {
+        String sql = "SELECT * FROM view_menu limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
+
+    public List<Map<String, Object>> getViewMenuItemsPriceHistory() {
+        String sql = "SELECT * FROM view_menu_items_price_history limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
+
+    public List<Map<String, Object>> getViewReview() {
+        String sql = "SELECT * FROM view_review limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
+
+    public List<Map<String, Object>> getViewTableReservations() {
+        String sql = "SELECT * FROM view_table_reservations limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
+
+    public List<Map<String, Object>> getWaiterAvgGrade() {
+        String sql = "SELECT * FROM waiter_avg_grade limit 1000";
+        return jdbcTemplate.queryForList(sql);
+    }
 }

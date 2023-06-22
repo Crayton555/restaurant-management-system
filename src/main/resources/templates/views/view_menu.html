@@ -1,0 +1,24 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Menu</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Menu Item ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="menuItem : ${viewMenu}">
+                <td th:text="${menuItem.id_menu_items}"></td>
+                <td th:text="${menuItem.name}"></td>
+                <td th:text="${menuItem.price}"></td>
+                <td th:text="${menuItem.description}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

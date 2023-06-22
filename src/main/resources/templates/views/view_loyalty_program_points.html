@@ -1,0 +1,22 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Loyalty Program Points</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Loyalty Points</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="loyaltyProgram : ${viewLoyaltyProgramPoints}">
+                <td th:text="${loyaltyProgram.id_client}"></td>
+                <td th:text="${loyaltyProgram.client_name}"></td>
+                <td th:text="${loyaltyProgram.loyalty_points}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

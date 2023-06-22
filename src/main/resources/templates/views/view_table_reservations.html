@@ -1,0 +1,36 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Table Reservations</h1>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Reservation ID</th>
+                <th>Client ID</th>
+                <th>Client Name</th>
+                <th>Table ID</th>
+                <th>Table Name</th>
+                <th>Reservation Name</th>
+                <th>Reservation Date</th>
+                <th>Reservation Time</th>
+                <th>Number of Guests</th>
+                <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="reservation : ${viewTableReservations}">
+                <td th:text="${reservation.id_table_reservation}"></td>
+                <td th:text="${reservation.id_client}"></td>
+                <td th:text="${reservation.client_name}"></td>
+                <td th:text="${reservation.id_table}"></td>
+                <td th:text="${reservation.table_name}"></td>
+                <td th:text="${reservation.table_reservation_name}"></td>
+                <td th:text="${reservation.reservation_date}"></td>
+                <td th:text="${reservation.reservation_time}"></td>
+                <td th:text="${reservation.number_guests}"></td>
+                <td th:text="${reservation.status}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
