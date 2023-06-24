@@ -1,0 +1,19 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Check Ingredient Availability</h2>
+
+        <form method="POST" th:action="@{/functionProcedures/checkIngredientAvailability}">
+            <div class="form-group">
+                <label for="ingredientId">Ingredient ID:</label>
+                <input type="number" class="form-control" id="ingredientId" name="ingredientId" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Check Availability</button>
+        </form>
+
+        <div th:if="${availability != null}">
+            <h3>Ingredient Availability</h3>
+            <p>Ingredient ID: <span th:text="${ingredientId}"></span></p>
+            <p>Availability: <span th:text="${availability}"></span></p>
+        </div>
+    </div>
+</div>

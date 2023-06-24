@@ -16,6 +16,8 @@
                 <th>Description</th>
                 <th>Recipe</th>
                 <th>Chef ID</th>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
             </tr>
             </thead>
             <tbody>
@@ -31,6 +33,8 @@
                 <td th:text="${cookedItem.description}"></td>
                 <td th:text="${cookedItem.recipe}"></td>
                 <td th:text="${cookedItem.id_chef}"></td>
+                <td th:text="${cookedItem.id_employee}"></td>
+                <td th:text="${cookedItem.employee_name}"></td>
             </tr>
             </tbody>
         </table>

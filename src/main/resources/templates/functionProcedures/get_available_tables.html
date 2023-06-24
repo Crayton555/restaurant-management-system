@@ -1,0 +1,31 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Get Available Tables</h2>
+
+        <form action="#" th:action="@{/functionProcedures/getAvailableTables}" method="post">
+            <label for="reservationDate">Reservation Date:</label>
+            <input type="text" id="reservationDate" name="reservationDate" required>
+            <br>
+            <label for="reservationTime">Reservation Time:</label>
+            <input type="text" id="reservationTime" name="reservationTime" required>
+            <br>
+            <button type="submit">Check Availability</button>
+        </form>
+
+        <hr>
+
+        <h3>Available Tables:</h3>
+        <table>
+            <tr>
+                <th>Table ID</th>
+                <th>Table Name</th>
+                <th>Capacity</th>
+            </tr>
+            <tr th:each="table : ${availableTables}">
+                <td><span th:text="${table.id_table}"></span></td>
+                <td><span th:text="${table.table_name}"></span></td>
+                <td><span th:text="${table.capacity}"></span></td>
+            </tr>
+        </table>
+    </div>
+</div>

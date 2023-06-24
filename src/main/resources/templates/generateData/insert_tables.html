@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Insert Tables</h1>
+        <form method="post" action="/generateData/insertTables">
+            <label for="numTables">Number of Tables:</label>
+            <input type="number" id="numTables" name="numTables" required>
+            <button type="submit">Insert</button>
+        </form>
+        <p th:text="${successMessage}"></p>
+    </div>
+</div>

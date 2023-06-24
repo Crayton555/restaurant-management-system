@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Insert Cooked Items</h1>
+        <form method="post" action="/generateData/insertCookedItems">
+            <label for="numCookedItems">Number of Cooked Items:</label>
+            <input type="number" id="numCookedItems" name="numCookedItems" required>
+            <button type="submit">Insert</button>
+        </form>
+        <p th:text="${successMessage}"></p>
+    </div>
+</div>

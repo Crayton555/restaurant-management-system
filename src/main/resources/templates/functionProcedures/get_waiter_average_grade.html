@@ -1,0 +1,16 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Waiter Average Grade</h1>
+        <form action="#" th:action="@{/functionProcedures/getWaiterAverageGrade}" method="post">
+            <label for="waiterId">Waiter ID:</label>
+            <input type="text" id="waiterId" name="waiterId" required>
+            <button type="submit">Get Average Grade</button>
+        </form>
+
+        <p th:if="${averageGrade != null}">
+            Waiter ID: <span th:text="${waiterId}"></span>
+            <br>
+            Average Grade: <span th:text="${averageGrade}"></span>
+        </p>
+    </div>
+</div>

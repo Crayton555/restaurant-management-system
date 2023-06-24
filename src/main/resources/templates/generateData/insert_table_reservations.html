@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Insert Table Reservations</h1>
+        <form method="post" action="/generateData/insertTableReservations">
+            <label for="numTableReservations">Number of Table Reservations:</label>
+            <input type="number" id="numTableReservations" name="numTableReservations" required>
+            <button type="submit">Insert</button>
+        </form>
+        <p th:text="${successMessage}"></p>
+    </div>
+</div>

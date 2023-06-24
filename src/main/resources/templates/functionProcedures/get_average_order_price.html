@@ -1,0 +1,20 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Average Order Price</h1>
+        <form action="#" th:action="@{/functionProcedures/getAverageOrderPrice}" method="post">
+            <label for="startDate">Start Date:</label>
+            <input type="text" id="startDate" name="startDate" required>
+            <label for="endDate">End Date:</label>
+            <input type="text" id="endDate" name="endDate" required>
+            <button type="submit">Calculate Average Price</button>
+        </form>
+
+        <p th:if="${averagePrice != null}">
+            Start Date: <span th:text="${startDate}"></span>
+            <br>
+            End Date: <span th:text="${endDate}"></span>
+            <br>
+            Average Price: <span th:text="${averagePrice}"></span>
+        </p>
+    </div>
+</div>

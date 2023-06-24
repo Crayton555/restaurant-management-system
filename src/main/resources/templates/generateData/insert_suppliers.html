@@ -1,0 +1,13 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <div class="container">
+            <h1>Insert Suppliers</h1>
+            <form method="post" action="/generateData/insertSuppliers">
+                <label for="numSuppliers">Number of Suppliers:</label>
+                <input type="number" id="numSuppliers" name="numSuppliers" required>
+                <button type="submit">Insert</button>
+            </form>
+            <p th:text="${successMessage}"></p>
+        </div>
+    </div>
+</div>
