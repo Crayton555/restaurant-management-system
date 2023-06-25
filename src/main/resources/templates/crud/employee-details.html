@@ -1,0 +1,15 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Employee Details</h2>
+        <p>ID: <span th:text="${employee.id_employee}"></span></p>
+        <p>Name: <span th:text="${employee.name}"></span></p>
+        <p>Contact Info: <span th:text="${employee.contact_info}"></span></p>
+        <p>Payment: <span th:text="${employee.payment}"></span></p>
+        <p>Start Shift: <span th:text="${employee.start_shift}"></span></p>
+        <p>End Shift: <span th:text="${employee.end_shift}"></span></p>
+        <p>Manager ID: <span th:text="${employee.id_manager}"></span></p>
+        <p>Chef ID: <span th:text="${employee.id_chef}"></span></p>
+        <p>Waiter ID: <span th:text="${employee.id_waiter}"></span></p>
+        <a th:href="@{/crud/employees}">Back to All Employees</a>
+    </div>
+</div>

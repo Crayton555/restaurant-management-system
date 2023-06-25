@@ -1,0 +1,14 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Manager Details</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+            </tr>
+            <tr>
+                <td th:text="${manager.id_manager}"></td>
+            </tr>
+        </table>
+        <a th:href="@{/crud/managers}" class="btn btn-primary">Back to Managers</a>
+    </div>
+</div>

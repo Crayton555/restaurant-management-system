@@ -1,0 +1,24 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Create Employee</h2>
+        <form th:action="@{/crud/employees}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contactInfo" required><br>
+            <label for="payment">Payment:</label>
+            <input type="number" id="payment" name="payment" required><br>
+            <label for="startShift">Start Shift:</label>
+            <input type="text" id="startShift" name="startShift" required><br>
+            <label for="endShift">End Shift:</label>
+            <input type="text" id="endShift" name="endShift" required><br>
+            <label for="managerId">Manager ID:</label>
+            <input type="number" id="managerId" name="managerId"><br>
+            <label for="chefId">Chef ID:</label>
+            <input type="number" id="chefId" name="chefId"><br>
+            <label for="waiterId">Waiter ID:</label>
+            <input type="number" id="waiterId" name="waiterId"><br>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <a th:href="@{/crud/clients/create}" class="btn btn-primary">Create Client</a>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Telephone Number</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="client : ${clients}">
+                <td th:text="${client.id_client}"></td>
+                <td th:text="${client.name}"></td>
+                <td th:text="${client.email}"></td>
+                <td th:text="${client.telephone_number}"></td>
+                <td>
+                    <a th:href="@{/crud/clients/{id}(id=${client.id_client})}" class="btn btn-info">Details</a>
+                    <a th:href="@{/crud/clients/{id}/update(id=${client.id_client})}" class="btn btn-warning">Edit</a>
+                    <a th:href="@{/crud/clients/{id}/delete(id=${client.id_client})}"
+                       onclick="return confirm('Are you sure you want to delete this client?')" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

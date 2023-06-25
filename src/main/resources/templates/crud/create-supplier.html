@@ -1,0 +1,16 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Create Supplier</h2>
+        <form method="post" action="/crud/suppliers">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" name="contactInfo" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>

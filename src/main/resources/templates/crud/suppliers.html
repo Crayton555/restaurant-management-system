@@ -1,0 +1,32 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <!-- crud/suppliers.html -->
+
+    <div class="container">
+        <h2>All Suppliers</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Contact Info</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="supplier : ${suppliers}">
+                <td th:text="${supplier['id_supplier']}"></td>
+                <td th:text="${supplier['name']}"></td>
+                <td th:text="${supplier['contact_info']}"></td>
+                <td>
+                    <a th:href="@{/crud/suppliers/{id}(id=${supplier['id_supplier']})}"
+                       class="btn btn-primary">Details</a>
+                    <a th:href="@{/crud/suppliers/{id}/update(id=${supplier['id_supplier']})}" class="btn btn-warning">Edit</a>
+                    <a th:href="@{/crud/suppliers/{id}/delete(id=${supplier['id_supplier']})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/crud/suppliers/create" class="btn btn-primary">Create Supplier</a>
+    </div>
+
+</div>

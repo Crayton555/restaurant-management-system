@@ -1,0 +1,14 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Create Client</h2>
+        <form th:action="@{/crud/clients}" method="post">
+            <label>Name:</label>
+            <input type="text" name="name" required><br>
+            <label>Email:</label>
+            <input type="email" name="email" required><br>
+            <label>Telephone Number:</label>
+            <input type="text" name="telephoneNumber" required><br>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</div>

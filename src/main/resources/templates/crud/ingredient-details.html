@@ -1,0 +1,13 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Ingredient Details</h2>
+
+        <div>
+            <p>ID: <span th:text="${ingredient.id_ingredients}"></span></p>
+            <p>Name: <span th:text="${ingredient.name}"></span></p>
+            <p>Supplies: <span th:text="${ingredient.supplies}"></span></p>
+        </div>
+
+        <a th:href="@{/crud/ingredients}" class="btn btn-primary">Back to List</a>
+    </div>
+</div>

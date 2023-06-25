@@ -1,0 +1,30 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>All Ingredients</h2>
+
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Supplies</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ingredient : ${ingredients}">
+                <td th:text="${ingredient.id_ingredients}"></td>
+                <td th:text="${ingredient.name}"></td>
+                <td th:text="${ingredient.supplies}"></td>
+                <td>
+                    <a th:href="@{/crud/ingredients/{id}(id=${ingredient.id_ingredients})}">Details</a>
+                    <a th:href="@{/crud/ingredients/{id}/update(id=${ingredient.id_ingredients})}">Edit</a>
+                    <a th:href="@{/crud/ingredients/{id}/delete(id=${ingredient.id_ingredients})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a th:href="@{/crud/ingredients/create}" class="btn btn-primary">Add New Ingredient</a>
+    </div>
+</div>

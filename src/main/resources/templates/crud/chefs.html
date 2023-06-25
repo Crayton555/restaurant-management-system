@@ -1,0 +1,18 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Chefs</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Actions</th>
+            </tr>
+            <tr th:each="chef : ${chefs}">
+                <td th:text="${chef.id_chef}"></td>
+                <td>
+                    <a th:href="@{/crud/chefs/{id}(id=${chef.id_chef})}" class="btn btn-primary">View Details</a>
+                    <a th:href="@{/crud/chefs/{id}/delete(id=${chef.id_chef})}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

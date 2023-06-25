@@ -1,0 +1,10 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Client Details</h2>
+        <p>ID: <span th:text="${client.id_client}"></span></p>
+        <p>Name: <span th:text="${client.name}"></span></p>
+        <p>Email: <span th:text="${client.email}"></span></p>
+        <p>Telephone Number: <span th:text="${client.telephone_number}"></span></p>
+        <a href="/crud/clients">Back to Clients</a>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Update Supplier</h2>
+        <form method="post" th:action="@{/crud/suppliers/{id}/update(id=${supplier.id_supplier})}">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" th:value="${supplier.name}" required>
+            </div>
+            <div class="form-group">
+                <label for="contactInfo">Contact Info:</label>
+                <input type="text" id="contactInfo" name="contactInfo" class="form-control"
+                       th:value="${supplier.contact_info}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</div>

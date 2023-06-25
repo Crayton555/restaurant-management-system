@@ -1,0 +1,25 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h2>Update Employee</h2>
+        <form th:action="@{/crud/employees/{id}(id=${employee.id_employee})}" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" th:value="${employee.name}" required><br>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" name="contactInfo" th:value="${employee.contact_info}" required><br>
+            <label for="payment">Payment:</label>
+            <input type="number" id="payment" name="payment" th:value="${employee.payment}" required><br>
+            <label for="startShift">Start Shift:</label>
+            <input type="text" id="startShift" name="startShift" th:value="${employee.start_shift}" required><br>
+            <label for="endShift">End Shift:</label>
+            <input type="text" id="endShift" name="endShift" th:value="${employee.end_shift}" required><br>
+            <label for="managerId">Manager ID:</label>
+            <input type="number" id="managerId" name="managerId" th:value="${employee.id_manager}"><br>
+            <label for="chefId">Chef ID:</label>
+            <input type="number" id="chefId" name="chefId" th:value="${employee.id_chef}"><br>
+            <label for="waiterId">Waiter ID:</label>
+            <input type="number" id="waiterId" name="waiterId" th:value="${employee.id_waiter}"><br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
