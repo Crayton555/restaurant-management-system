@@ -19,6 +19,13 @@ public class FunctionProcedureController {
         this.functionProcedureRepository = functionProcedureRepository;
     }
 
+    @GetMapping()
+    public String showFunctionProcedures(Model model) {
+        model.addAttribute("bodyContent", "functionProcedures/functionProcedures");
+
+        return "master-template";
+    }
+
     @GetMapping("/updateMenuItemPrice")
     public String showUpdateMenuItemPriceForm(Model model) {
         model.addAttribute("bodyContent", "functionProcedures/update_menu_item_price");

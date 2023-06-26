@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping(value = {"/home"})
+@RequestMapping(value = {"","/home"})
 public class HomeController {
 
     private final RestaurantViewRepository restaurantViewRepository;
@@ -20,5 +20,9 @@ public class HomeController {
         this.restaurantViewRepository = restaurantViewRepository;
     }
 
-
+    @GetMapping()
+    public String getAllTables(Model model) {
+        model.addAttribute("bodyContent", "home");
+        return "master-template";
+    }
 }

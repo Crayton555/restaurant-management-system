@@ -17,7 +17,7 @@ public class GenerateDataController {
         this.generateDataRepository = generateDataRepository;
     }
 
-    @GetMapping
+    @GetMapping()
     public String generateDataLinks(Model model) {
         model.addAttribute("bodyContent", "generateData/generate_data_links");
         return "master-template";

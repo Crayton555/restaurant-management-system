@@ -17,6 +17,12 @@ public class CRUDController {
         this.crudRepository = crudRepository;
     }
 
+    @GetMapping()
+    public String getAllTables(Model model) {
+        model.addAttribute("bodyContent", "crud/tables");
+        return "master-template";
+    }
+
     @GetMapping("/waiters")
     public String getAllWaiters(Model model) {
         model.addAttribute("waiters", crudRepository.getAllWaiters());
