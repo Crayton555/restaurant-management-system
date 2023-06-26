@@ -1,0 +1,32 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Ingredients Price History</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Price</th>
+                <th>Price From</th>
+                <th>Price To</th>
+                <th>Ingredients ID</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="history : ${ingredientsPriceHistory}">
+                <td th:text="${history.id_ingredients_price_history}"></td>
+                <td th:text="${history.price}"></td>
+                <td th:text="${history.price_from}"></td>
+                <td th:text="${history.price_to}"></td>
+                <td th:text="${history.id_ingredients}"></td>
+                <td>
+                    <a th:href="@{/crud/ingredients/price-history/{id}(id=${history.id_ingredients_price_history})}">Details</a>
+                    <a th:href="@{/crud/ingredients/price-history/{id}/update(id=${history.id_ingredients_price_history})}">Edit</a>
+                    <a th:href="@{/crud/ingredients/price-history/{id}/delete(id=${history.id_ingredients_price_history})}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/crud/ingredients/price-history/create}">Create New</a>
+    </div>
+</div>

@@ -298,5 +298,56 @@ public class CRUDController {
         return "redirect:/crud/ingredients";
     }
 
+    @GetMapping("/ingredients/price-history")
+    public String getAllIngredientsPriceHistory(Model model) {
+        model.addAttribute("ingredientsPriceHistory", crudRepository.getAllIngredientsPriceHistory());
+        model.addAttribute("bodyContent", "crud/ingredients-price-history");
+        return "master-template";
+    }
 
+    @GetMapping("/ingredients/price-history/{id}")
+    public String getIngredientsPriceHistoryById(@PathVariable int id, Model model) {
+        model.addAttribute("ingredientsPriceHistory", crudRepository.getIngredientsPriceHistoryById(id));
+        model.addAttribute("bodyContent", "crud/ingredients-price-history-details");
+        return "master-template";
+    }
+
+    @GetMapping("/ingredients/price-history/{id}/delete")
+    public String deleteIngredientsPriceHistory(@PathVariable int id) {
+        crudRepository.deleteIngredientsPriceHistory(id);
+        return "redirect:/crud/ingredients/price-history";
+    }
+
+    @GetMapping("/ingredients/price-history/create")
+    public String getCreateIngredientsPriceHistoryPage(Model model) {
+        // Add any necessary data to the model if needed
+        model.addAttribute("bodyContent", "crud/create-ingredients-price-history");
+        return "master-template";
+    }
+
+    @PostMapping("/ingredients/price-history")
+    public String createIngredientsPriceHistory(@RequestParam("price") int price,
+                                                @RequestParam("priceFrom") String priceFrom,
+                                                @RequestParam("priceTo") String priceTo,
+                                                @RequestParam("ingredientsId") int ingredientsId) {
+        crudRepository.createIngredientsPriceHistory(price, priceFrom, priceTo, ingredientsId);
+        return "redirect:/crud/ingredients/price-history";
+    }
+
+    @GetMapping("/ingredients/price-history/{id}/update")
+    public String getUpdateIngredientsPriceHistoryPage(@PathVariable int id, Model model) {
+        model.addAttribute("ingredientsPriceHistory", crudRepository.getIngredientsPriceHistoryById(id));
+        model.addAttribute("bodyContent", "crud/update-ingredients-price-history");
+        return "master-template";
+    }
+
+    @PostMapping("/ingredients/price-history/{id}/update")
+    public String updateIngredientsPriceHistory(@PathVariable int id,
+                                                @RequestParam("price") int price,
+                                                @RequestParam("priceFrom") String priceFrom,
+                                                @RequestParam("priceTo") String priceTo,
+                                                @RequestParam("ingredientsId") int ingredientsId) {
+        crudRepository.updateIngredientsPriceHistory(id, price, priceFrom, priceTo, ingredientsId);
+        return "redirect:/crud/ingredients/price-history";
+    }
 }

@@ -3,8 +3,9 @@ package mk.ukim.finki.restaurantmanagementsystem.repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
@@ -167,7 +168,9 @@ public class CRUDRepository {
 
     public void createIngredientsPriceHistory(int price, String priceFrom, String priceTo, int ingredientsId) {
         String sql = "CALL create_ingredients_price_history(?, ?, ?, ?)";
-        jdbcTemplate.update(sql, price, priceFrom, priceTo, ingredientsId);
+        Date startTimestamp = Date.valueOf(LocalDate.parse(priceFrom));
+        Date endTimestamp = Date.valueOf(LocalDate.parse(priceTo));
+        jdbcTemplate.update(sql, price, startTimestamp, endTimestamp, ingredientsId);
     }
 
     public Map<String, Object> getIngredientsPriceHistoryById(int ingredientsPriceHistoryId) {
@@ -177,7 +180,9 @@ public class CRUDRepository {
 
     public void updateIngredientsPriceHistory(int ingredientsPriceHistoryId, int price, String priceFrom, String priceTo, int ingredientsId) {
         String sql = "CALL update_ingredients_price_history(?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, ingredientsPriceHistoryId, price, priceFrom, priceTo, ingredientsId);
+        Date startTimestamp = Date.valueOf(LocalDate.parse(priceFrom));
+        Date endTimestamp = Date.valueOf(LocalDate.parse(priceTo));
+        jdbcTemplate.update(sql, ingredientsPriceHistoryId, price, startTimestamp, endTimestamp, ingredientsId);
     }
 
     public void deleteIngredientsPriceHistory(int ingredientsPriceHistoryId) {

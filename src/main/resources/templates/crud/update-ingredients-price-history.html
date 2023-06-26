@@ -1,0 +1,23 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Update Ingredients Price History</h1>
+        <form method="post"
+              th:action="@{/crud/ingredients/price-history/{id}/update(id=${ingredientsPriceHistory.id_ingredients_price_history})}">
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" th:value="${ingredientsPriceHistory.price}" required><br><br>
+
+            <label for="priceFrom">Price From:</label>
+            <input type="text" id="priceFrom" name="priceFrom" th:value="${ingredientsPriceHistory.price_from}" required><br><br>
+
+            <label for="priceTo">Price To:</label>
+            <input type="text" id="priceTo" name="priceTo" th:value="${ingredientsPriceHistory.price_to}"
+                   required><br><br>
+
+            <label for="ingredientsId">Ingredients ID:</label>
+            <input type="number" id="ingredientsId" name="ingredientsId"
+                   th:value="${ingredientsPriceHistory.id_ingredients}" required><br><br>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>

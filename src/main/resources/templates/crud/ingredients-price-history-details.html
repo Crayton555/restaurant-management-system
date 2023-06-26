@@ -1,0 +1,22 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <div class="container">
+        <h1>Ingredients Price History Details</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Price</th>
+                <th>Price From</th>
+                <th>Price To</th>
+                <th>Ingredients ID</th>
+            </tr>
+            <tr>
+                <td th:text="${ingredientsPriceHistory.id_ingredients_price_history}"></td>
+                <td th:text="${ingredientsPriceHistory.price}"></td>
+                <td th:text="${ingredientsPriceHistory.price_from}"></td>
+                <td th:text="${ingredientsPriceHistory.price_to}"></td>
+                <td th:text="${ingredientsPriceHistory.id_ingredients}"></td>
+            </tr>
+        </table>
+        <a th:href="@{/crud/ingredients/price-history}" class="btn btn-primary">Back</a>
+    </div>
+</div>
