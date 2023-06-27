@@ -4,10 +4,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 @Repository
 public class CRUDRepository {
@@ -62,9 +66,10 @@ public class CRUDRepository {
         jdbcTemplate.update(sql, chefId);
     }
 
-    public void createEmployee(String empName, String contactInfo, double payment, Timestamp startShift,
-                               Timestamp endShift, int managerId, int chefId, int waiterId) {
-        String sql = "SELECT create_employee(?, ?, ?, ?, ?, ?, ?, ?)";
+    public void createEmployee(String empName, String contactInfo, int payment, String startShift,
+                               String endShift, int managerId, int chefId, int waiterId) {
+        String sql = "CALL create_employee(?, ?, ?, ?, ?, ?, ?, ?)";
+
         jdbcTemplate.update(sql, empName, contactInfo, payment, startShift, endShift, managerId, chefId, waiterId);
     }
 
@@ -73,14 +78,15 @@ public class CRUDRepository {
         return jdbcTemplate.queryForMap(sql, employeeId);
     }
 
-    public void updateEmployee(int employeeId, String empName, String contactInfo, double payment,
-                               Timestamp startShift, Timestamp endShift, int managerId, int chefId, int waiterId) {
-        String sql = "SELECT update_employee(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    public void updateEmployee(int employeeId, String empName, String contactInfo, int payment,
+                               String startShift, String endShift, int managerId, int chefId, int waiterId) {
+        String sql = "CALL update_employee(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         jdbcTemplate.update(sql, employeeId, empName, contactInfo, payment, startShift, endShift, managerId, chefId, waiterId);
     }
 
     public void deleteEmployee(int employeeId) {
-        String sql = "SELECT delete_employee(?)";
+        String sql = "CALL delete_employee(?)";
         jdbcTemplate.update(sql, employeeId);
     }
 

@@ -107,13 +107,13 @@ public class CRUDController {
     @PostMapping("/employees")
     public String createEmployee(@RequestParam("name") String name,
                                  @RequestParam("contactInfo") String contactInfo,
-                                 @RequestParam("payment") double payment,
+                                 @RequestParam("payment") int payment,
                                  @RequestParam("startShift") String startShift,
                                  @RequestParam("endShift") String endShift,
-                                 @RequestParam("managerId") int managerId,
-                                 @RequestParam("chefId") int chefId,
-                                 @RequestParam("waiterId") int waiterId) {
-        crudRepository.createEmployee(name, contactInfo, payment, Timestamp.valueOf(startShift), Timestamp.valueOf(endShift), managerId, chefId, waiterId);
+                                 @RequestParam(value = "managerId", required = false) int managerId,
+                                 @RequestParam(value = "chefId", required = false) int chefId,
+                                 @RequestParam(value = "waiterId", required = false) int waiterId) {
+        crudRepository.createEmployee(name, contactInfo, payment, startShift, endShift, managerId, chefId, waiterId);
         return "redirect:/crud/employees";
     }
 
@@ -128,13 +128,13 @@ public class CRUDController {
     public String updateEmployee(@PathVariable int id,
                                  @RequestParam("name") String name,
                                  @RequestParam("contactInfo") String contactInfo,
-                                 @RequestParam("payment") double payment,
+                                 @RequestParam("payment") int payment,
                                  @RequestParam("startShift") String startShift,
                                  @RequestParam("endShift") String endShift,
-                                 @RequestParam("managerId") int managerId,
-                                 @RequestParam("chefId") int chefId,
-                                 @RequestParam("waiterId") int waiterId) {
-        crudRepository.updateEmployee(id, name, contactInfo, payment, Timestamp.valueOf(startShift), Timestamp.valueOf(endShift), managerId, chefId, waiterId);
+                                 @RequestParam(value = "managerId", required = false) int managerId,
+                                 @RequestParam(value = "chefId", required = false) int chefId,
+                                 @RequestParam(value = "waiterId", required = false) int waiterId) {
+        crudRepository.updateEmployee(id, name, contactInfo, payment, startShift, endShift, managerId, chefId, waiterId);
         return "redirect:/crud/employees";
     }
 
